@@ -1,7 +1,6 @@
 package com.github.yeetologist.palindromechecker.ui
 
 import android.content.Intent
-import android.graphics.Typeface
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.github.yeetologist.palindromechecker.databinding.ActivitySecondBinding
