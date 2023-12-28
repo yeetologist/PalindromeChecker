@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">PalindromeChecker</string>
+    <string name="yes">Yes</string>
+    <string name="OK">OK</string>
+    <string name="Check">Check</string>
+    <string name="Next">Next</string>
+    <string name="Name">Name</string>
+    <string name="Palindrome">Palindrome</string>
+    <string name="isPalindrome">isPalindrome</string>
+    <string name="notPalindrome">not palindrome</string>
+    <string name="welcome">Welcome</string>
+    <string name="username">Username</string>
+    <string name="selected_user_name">Selected User Name</string>
+    <string name="choose_a_user">Choose a User</string>
+    <string name="firstname_lastname">Firstname Lastname</string>
+    <string name="email_email_com">email@email.com</string>
+    <string name="second_screen">Second Screen</string>
+    <string name="third_screen">Third Screen</string>
+
+</resources>
