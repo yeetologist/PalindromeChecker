@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.github.yeetologist.palindromechecker.data.DataItem
 import com.github.yeetologist.palindromechecker.databinding.ActivityThirdBinding
 import com.github.yeetologist.palindromechecker.util.PreferenceManager
@@ -15,6 +16,8 @@ class ThirdActivity : AppCompatActivity() {
     private lateinit var thirdViewModel: ThirdViewModel
 
     private lateinit var adapter: UserListAdapter
+
+    private var page: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +31,7 @@ class ThirdActivity : AppCompatActivity() {
         preferenceManager = PreferenceManager(this)
 
         thirdViewModel.listUsers.observe(this) {
-            setListUsers(it.peekContent())
+            setListUsers(it)
         }
 
         thirdViewModel.getUser()
@@ -38,6 +41,26 @@ class ThirdActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
         setupSwipeToRefresh()
+
+        setupScrollEvent()
+    }
+
+    private fun setupScrollEvent() {
+        binding.rvUser.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+                val visibleItemCount = layoutManager.childCount
+                val totalItemCount = layoutManager.itemCount
+                val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
+
+                if (visibleItemCount + firstVisibleItemPosition >= totalItemCount && firstVisibleItemPosition >= 0) {
+                    page += 1
+                    thirdViewModel.getUser(page)
+                }
+            }
+        })
+
     }
 
     private fun setupSwipeToRefresh() {
