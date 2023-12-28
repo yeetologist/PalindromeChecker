@@ -40,7 +40,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/et_palindrome"
         android:layout_width="match_parent"
@@ -62,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginVertical="32dp"
-        android:background="@color/tosca"
+        android:background="@drawable/rounded_corner"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Check"
         android:textColor="@color/white"
@@ -76,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginVertical="16dp"
-        android:background="@color/tosca"
+        android:background="@drawable/rounded_corner"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Next"
         android:textColor="@color/white"

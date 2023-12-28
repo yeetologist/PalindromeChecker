@@ -50,7 +50,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
-        android:background="@color/tosca"
+        android:background="@drawable/rounded_corner"
         android:fontFamily="@font/poppins_regular"
         android:text="@string/choose_a_user"
         android:textColor="@color/white"
